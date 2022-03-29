@@ -16,7 +16,7 @@ const gameBoard = document.getElementById("game-board");
 function main(currentTime) {
   if (gameOver) {
     if(confirm("You Lost, Press ok to restart")){
-        location.reload();
+        location.replace("https://qdotdash.github.io/snake-game/");
     }
     return
   }
