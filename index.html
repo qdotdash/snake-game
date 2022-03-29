@@ -17,26 +17,75 @@
       }
 
       #game-board {
-          background-color: #CCC;
-          height: 100vmin;
-          width: 100vmin;
-          display: grid;
-          grid-template-rows: repeat(21, 1fr);
-          grid-template-columns: repeat(21, 1fr);
+        background-color: #ccc;
+        height: 100vmin;
+        width: 100vmin;
+        display: grid;
+        grid-template-rows: repeat(21, 1fr);
+        grid-template-columns: repeat(21, 1fr);
+      }
+
+      #button-container {
+        display: flex;
+        height: 100vmin;
+        width: 10vmin;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 2vmin;
+        margin-right: 2vmin;
       }
 
       .snake {
-          background-color: darkcyan;
-          border: 0.25vmin solid black;
+        background-color: darkcyan;
+        border: 0.25vmin solid black;
       }
 
       .food {
-          background-color: chartreuse;
-          border: 0.25vmin solid black
+        background-color: chartreuse;
+        border: 0.25vmin solid black;
+      }
+
+      .container {
+        /* Center the content */
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        margin-top: 2vmin;
+
+        /* Spacing */
+        padding: 8px;
+      }
+
+      .container__triangle {
+        border-style: solid;
+
+        /* Size */
+        height: 0px;
+        width: 0px;
+      }
+
+      .container__triangle--up {
+        border-color: transparent transparent red;
+        border-width: 0vmin 3vmin 3vmin;
+      }
+
+      .container__triangle--down {
+        border-color: greenyellow transparent transparent;
+        border-width: 3vmin 3vmin 0vmin;
       }
     </style>
   </head>
   <body>
+    <div id="button-container">
+      <button id="speed-up" class="container">
+        <div class="container__triangle container__triangle--up"></div>
+      </button>
+      <button id="speed-down" class="container">
+        <div class="container__triangle container__triangle--down"></div>
+      </button>
+    </div>
     <div id="game-board"></div>
     <script src="game.js" defer type="module"></script>
   </body>
